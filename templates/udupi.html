@@ -1,0 +1,253 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srimookambike</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 80px; /* Added to account for fixed navbar */
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        #site-header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .navbar-nav .nav-link {
+            padding: 0.5rem 1rem;
+        }
+        .btn-style {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+        .theme-switch input {
+            display: none;
+        }
+        .mode-container {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .mode-container:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            border-radius: 50%;
+        }
+        input:checked + .mode-container {
+            background-color: #66bb6a;
+        }
+        input:checked + .mode-container:before {
+            transform: translateX(26px);
+        }
+        .mode-container i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .mode-container .gg-sun {
+            left: 5px;
+        }
+        .mode-container .gg-moon {
+            right: 5px;
+        }
+        /* Rest of your existing styles... */
+    </style>
+</head>
+<body>
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg stroke">
+                <h1><a class="navbar-brand mr-lg-5" href="index.html">
+                    Srimookambike
+                </a></h1>
+                <button class="navbar-toggler collapsed bg-gradient" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'travelapp:aboutPage' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="services.html">Destinations</a>
+                        </li>
+                
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'travelapp:ContactpageView' %}">Contact</a>
+                        </li>
+            
+                      </ul>
+                </div>
+                <!-- <div class="d-lg-block d-none">
+                    <a href="contact.html" class="btn btn-style btn-secondary">Get In Touch</a>
+                </div> -->
+                <!-- toggle switch for light and dark theme -->
+                <!-- <div class="mobile-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div> -->
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <div class="container mt-4">
+        <h1 class="tour-title">Udupi</h1>
+        <!-- <p class="tour-info">
+            <i class="far fa-clock"></i> 4 days - 3 nights
+            <i class="fas fa-map-marker-alt ms-3"></i> Bali, Indonesia
+            <i class="fas fa-tag ms-3"></i> Adventure, Culture/Nature, Popular
+            <button class="btn btn-outline-secondary btn-sm ms-3"><i class="fas fa-share"></i> Share</button>
+            <button class="btn btn-outline-secondary btn-sm ms-2"><i class="far fa-heart"></i> Save</button>
+        </p> -->
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row g-2">
+                    <div class="col-md-8">
+                        <img src="/static/assets/images/udupi11.jpg" alt="Bali Temple" class="img-fluid rounded gallery-image">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row g-2">
+                            <div class="col-6 col-md-12">
+                                <img src="/static/assets/images/sri.jpg" alt="Bali Scenery" class="img-fluid rounded gallery-image">
+                            </div>
+                            <div class="col-6 col-md-12">
+                                <img src="/static/assets/images/beach.jpg" alt="Bali Beach" class="img-fluid rounded gallery-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="price-card">
+                    <span class="info-tag">Udupi Sri Krishna temple</span>
+                    <h2 class="mt-2">Open 4:30 AM - 9:30 PM</h2>
+                    <p>
+                        <!-- <i class="fas fa-star text-warning"></i> 4.8 • 120 reviews -->
+                    </p>
+                    <h3>Daily Darshan Available</h3>
+                    <!-- <p class="text-muted">Temple Code: MKB001</p>
+                    <a href="#mookambike-info" class="btn btn-primary btn-lg w-100 view-timings-btn">View Timings</a>
+                    <div class="mt-3">
+                        <h5>Special Services</h5>
+                        <p>Abhishekam, Archana, Annadanam available</p>
+                        <small class="text-muted">Check temple office for booking | Phone: +91 1234567890</small>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+<!-- 
+        <ul class="nav nav-tabs" id="tourTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">Temple Details</button>
+          </li>
+          <!-- <li class="nav-item" role="presentation">
+              <button class="nav-link" id="included-tab" data-bs-toggle="tab" data-bs-target="#included" type="button" role="tab" aria-controls="included" aria-selected="false">What's Included</button>
+          </li> -->
+          <!-- <li class="nav-item" role="presentation">
+              <button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" aria-controls="details" aria-selected="false">Tour details</button>
+          </li> -->
+      <!-- </ul>
+      <div class="tab-content mt-5" id="tourTabsContent">
+          <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+              <div class="row">
+                  <div class="col-md-3">
+                      <div class="tour-details-card">
+                          <p><i class="fas fa-hiking tour-details-icon"></i> Travel Style: 1-to-Foursomethings</p>
+                          <small>Udupi Sri Krishna temple opens its gate from 4.30 AM to 9.30 PM on all days</small>
+                      </div>
+                  </div>
+                  <!-- <div class="col-md-3">
+                      <div class="tour-details-card">
+                          <p><i class="fas fa-dumbbell tour-details-icon"></i> Physical Rating: 2 - Light</p>
+                          <small>Light walking and hiking suitable for most fitness levels. Nothing too challenging.</small>
+                      </div>
+                  </div> -->
+                  <!-- <div class="col-md-3">
+                      <div class="tour-details-card">
+                          <p><i class="fas fa-concierge-bell tour-details-icon"></i> Service Level: Basic</p>
+                          <small>Simple and clean hotels and hostels; affordable public and private transport; lots of optional activities.</small>
+                      </div>
+                  </div> -->
+                  <!-- <div class="col-md-3">
+                      <div class="tour-details-card">
+                          <p><i class="fas fa-users tour-details-icon"></i> Trip Type: Small Group</p>
+                          <small>Small group experience; Max 20, avg 12.</small>
+                      </div>
+                  </div> -->
+              <!-- </div>
+              <p class="mt-4">Now's the time to explore Bali - Nusa Penida Island on your terms with this tour that's affordable for young travellers. Watch the sunset through the Beach of Bali, stretch out on white-sand beaches, drift through the tranquil backwaters, and rise at dawn to see the sunrise — trust us, it's worth not hitting snooze. This seven-day tour offers a quick yet intimate introduction to the diversity of south India. Unwind with free time or some yoga, meet the local people, and spend nights.</p>
+          </div>
+          <div class="tab-pane fade" id="included" role="tabpanel" aria-labelledby="included-tab">
+              <h4>What's Included</h4>
+              <ul>
+                  <li>Accommodations for 3 nights</li>
+                  <li>All transportation between destinations</li>
+                  <li>Guide throughout the tour</li>
+                  <li>All activities mentioned in the itinerary</li>
+                  <li>Meals as specified in the itinerary</li>
+              </ul>
+          </div>
+          <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
+              <h4>Tour Details</h4>
+              <p>Day 1: Arrival in Bali</p>
+              <p>Day 2: Explore Nusa Penida Island</p>
+              <p>Day 3: Beach day and cultural experiences</p>
+              <p>Day 4: Departure</p>
+          </div>
+      </div> --> 
+
+       <hr class="mt-5">
+
+        <div class="mt-4">
+            <p style="text-align: justify;">Udupi (also spelled Udipi, and known as Odipu) is a city in the Indian state of Karnataka. Udupi is situated about 55 km north of the educational, commercial and industrial hub of Mangalore and more than 400 km west of state capital Bangalore by road.
+
+              It is the administrative headquarters of Udupi district, and one of the fastest-growing cities in Karnataka. Udupi is one of the top tourist attractions in Karnataka and has various educational institutions. It is notable for the Krishna Temple and is also known as the temple city. It also lends its name to the popular Udupi cuisine, is also known as Parashurama Kshetra, and is famous for Kanakana kindi. A centre of pilgrimage, Udupi is known as Rajata Peetha and Shivalli (Shivabelle).</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
